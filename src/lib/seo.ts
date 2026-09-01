@@ -46,7 +46,7 @@ export function generateLocalBusinessJsonLd() {
         closes: "22:00",
       },
     ],
-    sameAs: [],
+    sameAs: [SITE_CONFIG.social.facebook, SITE_CONFIG.social.whatsapp],
     founder: {
       "@type": "Person",
       name: SITE_CONFIG.ceo,
@@ -83,7 +83,15 @@ export function generateLocalBusinessJsonLd() {
           itemOffered: {
             "@type": "Service",
             name: "Scissor Lift Rental",
-            description: "Scissor lift rental for construction and industrial use",
+            description: "Electric and rough terrain scissor lift rental 5m to 18m in UAE",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Equipment Recovery & Transport",
+            description: "Heavy equipment recovery and transport service 3 to 20 tons across UAE",
           },
         },
       ],
@@ -123,5 +131,6 @@ export function generateOrganizationJsonLd() {
       areaServed: "AE",
       availableLanguage: ["English", "Arabic"],
     },
+    sameAs: [SITE_CONFIG.social.facebook, SITE_CONFIG.social.whatsapp],
   };
 }

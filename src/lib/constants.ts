@@ -9,6 +9,10 @@ export const SITE_CONFIG = {
   whatsapp: "971525156677",
   email: "info@nooraccessrental.com",
   ceo: "Noorulhabib",
+  social: {
+    facebook: "https://www.facebook.com/people/Noor-Access-Qatar/100064840985088/",
+    whatsapp: "https://wa.me/971525156677",
+  },
   location: {
     city: "Sharjah",
     region: "UAE",
@@ -28,6 +32,8 @@ export const SITE_CONFIG = {
     "industrial equipment rental",
     "Skyjack rental UAE",
     "access platform rental Gulf",
+    "electric scissor lift rental Dubai",
+    "equipment recovery service UAE",
   ],
 };
 
@@ -36,28 +42,87 @@ export const CEO_MESSAGE =
 
 export const SERVICES = [
   {
-    title: "Telescopic Boom Lifts",
+    id: "boom-lift",
+    title: "Boom Lifts — Any Type",
     description:
-      "High-reach telescopic manlifts for construction, maintenance, and industrial projects across UAE.",
+      "Telescopic and articulating boom lifts from 5 metres to 40 metres for construction, maintenance, and industrial access.",
     icon: "boom",
+    range: "5m – 40m",
   },
   {
-    title: "Articulating Boom Lifts",
+    id: "rough-terrain-scissor",
+    title: "Rough Terrain Scissor Lifts",
     description:
-      "Flexible articulating booms for complex access challenges in tight urban and industrial spaces.",
-    icon: "articulating",
-  },
-  {
-    title: "Scissor Lifts",
-    description:
-      "Stable scissor lifts for warehouse operations, installations, and indoor vertical access work.",
+      "17–18m 4WD scissor lifts with levelling outriggers, large platform capacity, and certified servicing.",
     icon: "scissor",
+    range: "17m – 18m",
   },
   {
-    title: "Spider Lifts",
+    id: "electric-scissor",
+    title: "Electric Scissor Lifts",
     description:
-      "Compact spider lifts for delicate flooring, narrow passages, and specialized access requirements.",
-    icon: "spider",
+      "Electric scissor lifts ideal for warehouse, indoor installations, and clean-floor vertical access projects.",
+    icon: "electric",
+    range: "5m – 12m",
+  },
+  {
+    id: "recovery-service",
+    title: "Recovery & Transport",
+    description:
+      "Professional equipment recovery and transport service from 3 tons to 20 tons across UAE.",
+    icon: "recovery",
+    range: "3 – 20 tons",
+  },
+];
+
+/** Fleet gallery — gallery1 also used in hero */
+export const FLEET = [
+  {
+    id: "boom-lift",
+    src: "/images/gallery1.jpg",
+    alt: "Boom lift rental UAE - telescopic and articulating 5 metres to 40 metres",
+    title: "Boom Lift — Any Type",
+    type: "Telescopic & Articulating",
+    range: "5m – 40m",
+    features: ["Telescopic", "Articulating", "5 metres to 40 metres"],
+    featured: false,
+  },
+  {
+    id: "recovery-service",
+    src: "/images/gallery2.jpg",
+    alt: "Equipment recovery and transport service 3 to 20 tons UAE",
+    title: "Recover Service",
+    type: "Transport & Recovery",
+    range: "3 – 20 tons",
+    features: ["3 tons to 20 tons", "Heavy equipment transport", "UAE-wide delivery"],
+    featured: false,
+  },
+  {
+    id: "electric-scissor",
+    src: "/images/gallery3.jpg",
+    alt: "Scissor lift electric rental 5m to 12m UAE - Noor Access Rental",
+    title: "Scissor Lift Electric",
+    type: "Electric Vertical Lift",
+    range: "5m – 12m",
+    features: ["Electric powered", "5M to 12M working height", "Indoor & warehouse use"],
+    featured: false,
+  },
+  {
+    id: "rough-terrain-scissor",
+    src: "/images/gallery4.jpg",
+    alt: "17-18m Rough Terrain Scissor Lift rental UAE - Skyjack SJ9250 RT",
+    title: "17–18m Rough Terrain Scissor Lift",
+    type: "4WD Scissor Lift",
+    range: "17m – 18m",
+    features: [
+      "4WD — rough terrain capable",
+      "Levelling outriggers available",
+      "Large platform, high capacity",
+      "Low hour, late model",
+      "Certified & regularly serviced",
+      "UAE-wide delivery",
+    ],
+    featured: false,
   },
 ];
 

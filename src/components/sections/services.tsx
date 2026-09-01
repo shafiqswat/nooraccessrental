@@ -1,13 +1,21 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { SERVICES } from "@/lib/constants";
-import { ArrowUpRight, Construction, Layers, Maximize2, Zap } from "lucide-react";
+import {
+  ArrowUpRight,
+  Construction,
+  Layers,
+  Maximize2,
+  Truck,
+  Zap,
+} from "lucide-react";
 
 const iconMap: Record<string, React.ReactNode> = {
-  boom: <Maximize2 className="h-6 w-6" />,
-  articulating: <ArrowUpRight className="h-6 w-6" />,
-  scissor: <Layers className="h-6 w-6" />,
-  spider: <Zap className="h-6 w-6" />,
+  boom: <Maximize2 className="h-7 w-7" />,
+  scissor: <Layers className="h-7 w-7" />,
+  electric: <Zap className="h-7 w-7" />,
+  recovery: <Truck className="h-7 w-7" />,
 };
 
 export function Services() {
@@ -24,29 +32,43 @@ export function Services() {
             <span className="text-brand-600">Rental Solutions</span>
           </h2>
           <p className="text-lg text-gray-600">
-            From telescopic boom lifts to spider lifts — we provide all types of
-            machinery at discounted rental rates across UAE.
+            From 5-metre scissor lifts to 40-metre boom lifts across UAE.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
           {SERVICES.map((service, index) => (
             <Card
-              key={service.title}
-              className="group relative overflow-hidden border-gray-100 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/5 transition-all duration-300 hover:-translate-y-1"
+              key={service.id}
+              className="group relative overflow-hidden border-gray-100 hover:border-brand-200 hover:shadow-xl hover:shadow-brand-600/10 transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-gold opacity-0 group-hover:opacity-100 transition-opacity" />
-              <CardHeader className="pb-2">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-100 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                  {iconMap[service.icon]}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+              <CardContent className="p-6 lg:p-8 space-y-5">
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors shrink-0">
+                    {iconMap[service.icon]}
+                  </div>
+                  <Badge variant="outline" className="shrink-0 font-bold text-brand-700">
+                    {service.range}
+                  </Badge>
                 </div>
-                <CardTitle className="text-lg mt-4">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  {service.description}
-                </p>
+
+                <div className="space-y-2">
+                  <h3 className="font-display text-xl lg:text-2xl font-bold text-gray-900 group-hover:text-brand-700 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+
+                <Button variant="ghost" size="sm" asChild className="text-brand-600 hover:text-brand-700 hover:bg-brand-50 px-0">
+                  <a href={`#fleet-${service.id}`}>
+                    <ArrowUpRight className="h-4 w-4" />
+                    View equipment in fleet
+                  </a>
+                </Button>
               </CardContent>
             </Card>
           ))}
