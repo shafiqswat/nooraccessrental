@@ -1,0 +1,130 @@
+import type { Metadata, Viewport } from "next";
+import { Inter, Outfit } from "next/font/google";
+import { SITE_CONFIG } from "@/lib/constants";
+import {
+  generateLocalBusinessJsonLd,
+  generateOrganizationJsonLd,
+  generateWebSiteJsonLd,
+} from "@/lib/seo";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  themeColor: "#ea580c",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_CONFIG.url),
+  title: {
+    default: SITE_CONFIG.title,
+    template: `%s | ${SITE_CONFIG.name}`,
+  },
+  description: SITE_CONFIG.description,
+  keywords: SITE_CONFIG.keywords,
+  authors: [{ name: SITE_CONFIG.ceo, url: SITE_CONFIG.url }],
+  creator: SITE_CONFIG.name,
+  publisher: SITE_CONFIG.name,
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  alternates: {
+    canonical: SITE_CONFIG.url,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_AE",
+    url: SITE_CONFIG.url,
+    siteName: SITE_CONFIG.name,
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    images: [
+      {
+        url: "/images/logo.jpeg",
+        width: 800,
+        height: 800,
+        alt: "Noor Access Rental - Manlift Rental UAE",
+      },
+      {
+        url: "/images/gallery1.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Boom Lift Rental UAE - Noor Access Rental",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_CONFIG.title,
+    description: SITE_CONFIG.description,
+    images: ["/images/gallery1.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Add your Google Search Console verification code after deployment
+    // google: "your-verification-code",
+  },
+  category: "business",
+  other: {
+    "geo.region": "AE",
+    "geo.placename": "Sharjah",
+    "geo.position": "25.3463;55.4209",
+    "ICBM": "25.3463, 55.4209",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const jsonLdScripts = [
+    generateLocalBusinessJsonLd(),
+    generateOrganizationJsonLd(),
+    generateWebSiteJsonLd(),
+  ];
+
+  return (
+    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
+      <head>
+        <link rel="icon" href="/images/logo.jpeg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/logo.jpeg" />
+        {jsonLdScripts.map((data, i) => (
+          <script
+            key={i}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+          />
+        ))}
+      </head>
+      <body className="font-sans">
+        {children}
+      </body>
+    </html>
+  );
+}
