@@ -15,14 +15,14 @@ export function Hero() {
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ea580c' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}
       />
-      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-brand-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-0 w-[600px] h-[600px] bg-brand-400/10 rounded-full blur-3xl max-lg:hidden" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-3xl max-lg:hidden" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-16">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left content */}
           <div className="space-y-8">
-            <div className="space-y-4 animate-fade-in-up">
+            <div className="space-y-4">
               <Badge className="text-sm">
                 <Star className="h-3 w-3 mr-1 fill-brand-500 text-brand-500" />
                 Top Rated Equipment Rental in UAE
@@ -39,7 +39,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <div className="flex flex-wrap gap-4">
               <Button variant="whatsapp" size="xl" asChild>
                 <a
                   href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=Hello%20Noor%20Access%20Rental,%20I%20need%20equipment%20rental%20in%20UAE`}
@@ -59,10 +59,7 @@ export function Hero() {
               </Button>
             </div>
 
-            <div
-              className="flex flex-wrap gap-6 pt-4 animate-fade-in-up"
-              style={{ animationDelay: "0.4s" }}
-            >
+            <div className="flex flex-wrap gap-6 pt-4">
               {[
                 { icon: Shield, text: "Certified Equipment" },
                 { icon: Clock, text: "24/7 Support" },
@@ -78,10 +75,10 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right - Equipment image */}
-          <div className="relative animate-slide-in-right">
+          {/* Right - Equipment image (no entrance animation — improves LCP & Speed Index) */}
+          <div className="relative">
             <div className="relative aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-gold/20 rounded-3xl rotate-3" />
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-gold/20 rounded-3xl rotate-3 max-lg:hidden" />
               <div className="relative bg-white rounded-3xl shadow-2xl shadow-brand-600/10 p-6 border border-gray-100">
                 <Image
                   src="/images/gallery1.jpg"
@@ -90,10 +87,12 @@ export function Hero() {
                   height={600}
                   className="w-full h-auto object-contain rounded-2xl"
                   priority
-                  sizes="(max-width: 1024px) 90vw, 600px"
+                  fetchPriority="high"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 600px"
+                  quality={75}
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 animate-float">
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-lg:hidden lg:animate-float">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-xl bg-brand-700 flex items-center justify-center text-white font-bold text-lg">
                     24/7
@@ -105,7 +104,7 @@ export function Hero() {
                 </div>
               </div>
               <div
-                className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 animate-float"
+                className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-lg:hidden lg:animate-float"
                 style={{ animationDelay: "1s" }}
               >
                 <div className="flex items-center gap-2">

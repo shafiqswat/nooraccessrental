@@ -21,6 +21,10 @@
     @apply bg-white text-gray-900 antialiased;
   }
 
+  footer a:not([class*="inline-flex"]) {
+    @apply underline underline-offset-2 decoration-gray-600 hover:decoration-brand-200;
+  }
+
   ::selection {
     @apply bg-brand-200 text-brand-900;
   }

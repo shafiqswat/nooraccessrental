@@ -125,7 +125,10 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-400">
           <p>
             &copy; {currentYear}{" "}
-            <Link href="/" className="text-gray-300 hover:text-brand-200 transition-colors">
+            <Link
+              href="/"
+              className="font-semibold text-white decoration-gray-500 hover:decoration-brand-200"
+            >
               {SITE_CONFIG.name}
             </Link>
             . All rights reserved.
