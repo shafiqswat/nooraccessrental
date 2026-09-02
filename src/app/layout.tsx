@@ -93,6 +93,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  // Google Search Console: meta tag via env (see .env.example). Avoids a root-level google*.html file.
   verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
     : undefined,
