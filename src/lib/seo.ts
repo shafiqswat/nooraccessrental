@@ -147,46 +147,116 @@ export function generateOrganizationJsonLd() {
   };
 }
 
-export function generateFAQJsonLd() {
+export function generateFAQJsonLd(faqs?: FaqItem[], pageId = "") {
   const base = SITE_CONFIG.canonicalUrl;
+  const idSuffix = pageId ? `/${pageId}` : "";
+
+  const items = faqs ?? [
+    {
+      question: "Where can I rent a manlift in UAE?",
+      answer:
+        "Noor Access Rental provides manlift and boom lift rental across Dubai, Sharjah, Abu Dhabi and the UAE. Contact us on WhatsApp at 00971 525156677 for rates and availability.",
+    },
+    {
+      question: "Do you offer boom lift rental in Dubai?",
+      answer:
+        "Yes. We rent telescopic and articulating boom lifts from 5 metres to 40 metres for construction and industrial projects in Dubai and across UAE.",
+    },
+    {
+      question: "Can I rent a scissor lift in UAE?",
+      answer:
+        "Yes. We offer electric scissor lifts (5m–12m) and rough terrain scissor lifts (17m–18m) for warehouse, indoor and outdoor access work.",
+    },
+    {
+      question: "What areas do you cover for aerial equipment rental?",
+      answer:
+        "We serve Sharjah, Dubai, Abu Dhabi and UAE-wide with discounted rental rates, certified equipment and 24/7 support.",
+    },
+  ];
 
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-  "@id": `${base}/#faq`,
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Where can I rent a manlift in UAE?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Noor Access Rental provides manlift and boom lift rental across Dubai, Sharjah, Abu Dhabi and the UAE. Contact us on WhatsApp at 00971 525156677 for rates and availability.",
-        },
+    "@id": `${base}${idSuffix}#faq`,
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
       },
-      {
-        "@type": "Question",
-        name: "Do you offer boom lift rental in Dubai?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. We rent telescopic and articulating boom lifts from 5 metres to 40 metres for construction and industrial projects in Dubai and across UAE.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I rent a scissor lift in UAE?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. We offer electric scissor lifts (5m–12m) and rough terrain scissor lifts (17m–18m) for warehouse, indoor and outdoor access work.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What areas do you cover for aerial equipment rental?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We serve Sharjah, Dubai, Abu Dhabi and UAE-wide with discounted rental rates, certified equipment and 24/7 support.",
-        },
-      },
-    ],
+    })),
   };
+}
+
+export type FaqItem = { question: string; answer: string };
+
+export type BreadcrumbItem = { name: string; path: string };
+
+export function generateBreadcrumbJsonLd(items: BreadcrumbItem[]) {
+  const base = SITE_CONFIG.canonicalUrl;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${base}${item.path}`,
+    })),
+  };
+}
+
+export type ServicePageSchemaInput = {
+  slug: string;
+  name: string;
+  description: string;
+  serviceType?: string;
+  areaServed?: string;
+};
+
+export function generateServiceJsonLd(input: ServicePageSchemaInput) {
+  const base = SITE_CONFIG.canonicalUrl;
+  const pageUrl = `${base}${input.slug}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: input.name,
+    description: input.description,
+    url: pageUrl,
+    provider: { "@id": `${base}/#localbusiness` },
+    areaServed: {
+      "@type": "City",
+      name: input.areaServed ?? "Dubai",
+      containedInPlace: { "@type": "Country", name: "United Arab Emirates" },
+    },
+    serviceType: input.serviceType ?? "Aerial work platform rental",
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "AED",
+      description: "Discounted daily, weekly and monthly rental — contact for quote",
+    },
+  };
+}
+
+export function generateServicePageJsonLd(input: {
+  slug: string;
+  name: string;
+  description: string;
+  serviceType?: string;
+  areaServed?: string;
+  faqs: FaqItem[];
+}) {
+  return [
+    generateServiceJsonLd(input),
+    generateBreadcrumbJsonLd([
+      { name: "Home", path: "/" },
+      { name: input.name, path: input.slug },
+    ]),
+    generateFAQJsonLd(input.faqs, input.slug.replace(/^\//, "")),
+  ];
 }

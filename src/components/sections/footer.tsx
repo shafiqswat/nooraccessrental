@@ -38,15 +38,22 @@ export function Footer() {
             <h3 className="font-display font-bold text-white mb-4">Services</h3>
             <ul className="space-y-2 text-sm">
               {[
-                { href: "#fleet-boom-lift", label: "Boom Lifts (5m–40m)" },
-                { href: "#fleet-rough-terrain-scissor", label: "Rough Terrain Scissor" },
-                { href: "#fleet-electric-scissor", label: "Electric Scissor Lifts" },
-                { href: "#fleet-recovery-service", label: "Recovery & Transport" },
+                { href: "/manlift-rental-dubai", label: "Manlift Rental Dubai", page: true },
+                { href: "/#fleet-boom-lift", label: "Boom Lifts (5m–40m)" },
+                { href: "/#fleet-rough-terrain-scissor", label: "Rough Terrain Scissor" },
+                { href: "/#fleet-electric-scissor", label: "Electric Scissor Lifts" },
+                { href: "/#fleet-recovery-service", label: "Recovery & Transport" },
               ].map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="text-gray-300 hover:text-brand-200 transition-colors">
-                    {item.label}
-                  </a>
+                  {"page" in item && item.page ? (
+                    <Link href={item.href} className="text-gray-300 hover:text-brand-200 transition-colors">
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a href={item.href} className="text-gray-300 hover:text-brand-200 transition-colors">
+                      {item.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

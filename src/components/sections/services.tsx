@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -64,10 +65,17 @@ export function Services() {
                 </div>
 
                 <Button variant="ghost" size="sm" asChild className="text-brand-700 hover:text-brand-700 hover:bg-brand-50 px-0">
-                  <a href={`#fleet-${service.id}`} aria-label={`View ${service.title} in fleet`}>
-                    <ArrowUpRight className="h-4 w-4" />
-                    View equipment in fleet
-                  </a>
+                  {service.id === "boom-lift" ? (
+                    <Link href="/manlift-rental-dubai" aria-label="Manlift rental Dubai">
+                      <ArrowUpRight className="h-4 w-4" />
+                      Manlift rental Dubai
+                    </Link>
+                  ) : (
+                    <a href={`#fleet-${service.id}`} aria-label={`View ${service.title} in fleet`}>
+                      <ArrowUpRight className="h-4 w-4" />
+                      View equipment in fleet
+                    </a>
+                  )}
                 </Button>
               </CardContent>
             </Card>
