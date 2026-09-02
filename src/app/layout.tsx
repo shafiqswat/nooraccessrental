@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
-import { getImageProps } from "next/image";
 import { SITE_CONFIG } from "@/lib/constants";
 import {
   generateLocalBusinessJsonLd,
@@ -24,7 +23,7 @@ const outfit = Outfit({
   weight: ["600", "700"],
   variable: "--font-outfit",
   display: "swap",
-  preload: false,
+  preload: true,
   adjustFontFallback: true,
 });
 
@@ -121,34 +120,12 @@ export default function RootLayout({
     generateFAQJsonLd(),
   ];
 
-  const {
-    props: { srcSet, sizes, src },
-  } = getImageProps({
-    alt: "Skyjack SJ66 T+ Telescopic Boom Lift rental UAE",
-    src: "/images/gallery1.jpg",
-    width: 640,
-    height: 640,
-    quality: 70,
-    priority: true,
-  });
-
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
-        <link
-          rel="preload"
-          as="image"
-          href={src}
-          imageSrcSet={srcSet}
-          imageSizes="100vw"
-          fetchPriority="high"
-        />
         <link rel="icon" href="/images/logo.jpeg" type="image/jpeg" />
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <link rel="apple-touch-icon" href="/images/logo.jpeg" />
-      </head>
-      <body className="font-sans">
-        {children}
         {jsonLdScripts.map((data, i) => (
           <script
             key={i}
@@ -156,6 +133,9 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
           />
         ))}
+      </head>
+      <body className="font-sans">
+        {children}
       </body>
     </html>
   );

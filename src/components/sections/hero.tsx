@@ -18,48 +18,8 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-3xl max-lg:hidden" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-24 pb-16">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Image first in DOM on mobile for earlier LCP discovery */}
-          <div className="relative order-1 lg:order-2">
-            <div className="relative aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-gold/20 rounded-3xl rotate-3 max-lg:hidden" />
-              <div className="relative bg-white rounded-2xl lg:rounded-3xl shadow-lg lg:shadow-2xl shadow-brand-600/10 p-3 sm:p-6 border border-gray-100">
-                <Image
-                  src="/images/gallery1.jpg"
-                  alt="Skyjack SJ66 T+ Telescopic Boom Lift rental UAE - Noor Access Rental"
-                  width={640}
-                  height={640}
-                  className="w-full h-auto object-contain rounded-xl lg:rounded-2xl"
-                  priority
-                  fetchPriority="high"
-                  sizes="100vw"
-                  quality={70}
-                />
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-lg:hidden lg:animate-float">
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-xl bg-brand-700 flex items-center justify-center text-white font-bold text-lg">
-                    24/7
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900">Available</p>
-                    <p className="text-sm text-gray-500">Round the clock</p>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-lg:hidden lg:animate-float"
-                style={{ animationDelay: "1s" }}
-              >
-                <div className="flex items-center gap-2">
-                  <Star className="h-5 w-5 fill-brand-500 text-brand-500" />
-                  <span className="font-bold text-gray-900">5.0 Rating</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="space-y-6 lg:space-y-8 order-2 lg:order-1">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="space-y-8">
             <div className="space-y-4">
               <Badge className="text-sm">
                 <Star className="h-3 w-3 mr-1 fill-brand-500 text-brand-500" />
@@ -97,7 +57,7 @@ export function Hero() {
               </Button>
             </div>
 
-            <div className="flex flex-wrap gap-6 pt-2 lg:pt-4">
+            <div className="flex flex-wrap gap-6 pt-4">
               {[
                 { icon: Shield, text: "Certified Equipment" },
                 { icon: Clock, text: "24/7 Support" },
@@ -110,6 +70,45 @@ export function Hero() {
                   <span className="font-medium">{item.text}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative aspect-square max-w-lg mx-auto w-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-500/20 to-gold/20 rounded-3xl rotate-3 max-lg:hidden" />
+              <div className="relative bg-white rounded-3xl shadow-2xl shadow-brand-600/10 p-6 border border-gray-100">
+                <Image
+                  src="/images/gallery1.jpg"
+                  alt="Skyjack SJ66 T+ Telescopic Boom Lift rental UAE - Noor Access Rental"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-contain rounded-2xl"
+                  priority
+                  fetchPriority="high"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 600px"
+                  quality={75}
+                />
+              </div>
+              <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-lg:hidden lg:animate-float">
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-xl bg-brand-700 flex items-center justify-center text-white font-bold text-lg">
+                    24/7
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900">Available</p>
+                    <p className="text-sm text-gray-500">Round the clock</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 max-lg:hidden lg:animate-float"
+                style={{ animationDelay: "1s" }}
+              >
+                <div className="flex items-center gap-2">
+                  <Star className="h-5 w-5 fill-brand-500 text-brand-500" />
+                  <span className="font-bold text-gray-900">5.0 Rating</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
