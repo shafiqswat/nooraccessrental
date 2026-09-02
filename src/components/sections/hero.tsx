@@ -90,11 +90,12 @@ export function Hero() {
                   height={600}
                   className="w-full h-auto object-contain rounded-2xl"
                   priority
+                  sizes="(max-width: 1024px) 90vw, 600px"
                 />
               </div>
               <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 animate-float">
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold text-lg">
+                  <div className="h-12 w-12 rounded-xl bg-brand-700 flex items-center justify-center text-white font-bold text-lg">
                     24/7
                   </div>
                   <div>

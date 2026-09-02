@@ -9,11 +9,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-brand-600 text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 hover:shadow-brand-700/30 active:scale-[0.98]",
+          "bg-brand-700 text-white shadow-lg shadow-brand-700/25 hover:bg-brand-800 hover:shadow-brand-800/30 active:scale-[0.98]",
         whatsapp:
-          "bg-[#128C7E] text-white shadow-lg shadow-[#128C7E]/30 hover:bg-[#0d6b5f] hover:shadow-[#128C7E]/40 active:scale-[0.98]",
+          "bg-[#075E54] text-white shadow-lg shadow-[#075E54]/30 hover:bg-[#054c44] hover:shadow-[#075E54]/40 active:scale-[0.98]",
         outline:
-          "border-2 border-brand-600 text-brand-700 bg-white hover:bg-brand-50 active:scale-[0.98]",
+          "border-2 border-brand-700 text-brand-800 bg-white hover:bg-brand-50 active:scale-[0.98]",
         ghost: "hover:bg-brand-50 text-brand-700",
         secondary:
           "bg-gray-900 text-white hover:bg-gray-800 shadow-lg active:scale-[0.98]",

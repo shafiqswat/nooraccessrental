@@ -84,7 +84,7 @@ export function WhyUs() {
               ))}
             </div>
             <div className="mt-8 pt-6 border-t border-gray-100 flex items-center gap-4">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-600 text-white font-display font-bold text-xl shrink-0 shadow-lg shadow-brand-600/25">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-700 text-white font-display font-bold text-xl shrink-0 shadow-lg shadow-brand-700/25">
                 Best
               </div>
               <div>

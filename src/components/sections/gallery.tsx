@@ -59,7 +59,7 @@ function FleetCard({ item }: { item: FleetItem }) {
         />
 
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-          <span className="bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+          <span className="bg-brand-700 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
             Available
           </span>
           <span className="bg-white text-brand-700 text-xs font-bold px-3 py-1.5 rounded-full border border-brand-200 shadow-sm">

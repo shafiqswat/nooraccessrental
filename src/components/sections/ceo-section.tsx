@@ -33,7 +33,7 @@ export function CeoSection() {
             </div>
 
             <div className="flex items-center gap-4 pt-4">
-              <div className="h-1 w-16 bg-brand-600 rounded-full" />
+              <div className="h-1 w-16 bg-brand-700 rounded-full" />
               <div>
                 <p className="font-display text-xl font-bold text-gray-900">
                   {SITE_CONFIG.ceo}
@@ -106,7 +106,7 @@ export function CeoSection() {
                 </div>
 
                 {/* Corner accent */}
-                <div className="absolute -top-4 -right-4 h-20 w-20 bg-brand-600 rounded-2xl rotate-12 opacity-90 flex items-center justify-center shadow-lg animate-float">
+                <div className="absolute -top-4 -right-4 h-20 w-20 bg-brand-700 rounded-2xl rotate-12 opacity-90 flex items-center justify-center shadow-lg animate-float">
                   <span className="text-white font-display font-bold text-sm text-center leading-tight">
                     UAE<br />Leader
                   </span>

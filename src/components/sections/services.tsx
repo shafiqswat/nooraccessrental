@@ -46,7 +46,7 @@ export function Services() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               <CardContent className="p-6 lg:p-8 space-y-5">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-700 group-hover:bg-brand-600 group-hover:text-white transition-colors shrink-0">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-700 group-hover:bg-brand-700 group-hover:text-white transition-colors shrink-0">
                     {iconMap[service.icon]}
                   </div>
                   <Badge variant="outline" className="shrink-0 font-bold text-brand-700">

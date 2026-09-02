@@ -103,7 +103,7 @@ export function Contact() {
                     rel={item.external ? "noopener noreferrer me" : undefined}
                     className="group flex flex-col gap-3 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-200 hover:bg-brand-50/50 hover:shadow-md hover:shadow-brand-600/5 transition-all duration-300"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-700 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-700 group-hover:bg-brand-700 group-hover:text-white transition-colors">
                       <item.icon className="h-5 w-5" />
                     </div>
                     <div>
