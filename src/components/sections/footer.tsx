@@ -1,6 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/constants";
+import { SERVICE_PAGES, GUIDE_PAGES } from "@/lib/site-pages";
 import { SocialLinks } from "@/components/social-links";
 import { Phone, Mail, MapPin } from "lucide-react";
 
@@ -10,7 +11,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-12">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <Image
@@ -35,27 +36,33 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display font-bold text-white mb-4">Services</h3>
+            <h3 className="font-display font-bold text-white mb-4">Rental Pages</h3>
             <ul className="space-y-2 text-sm">
-              {[
-                { href: "/manlift-rental-dubai", label: "Manlift Rental Dubai", page: true },
-                { href: "/#fleet-boom-lift", label: "Boom Lifts (5m–40m)" },
-                { href: "/#fleet-rough-terrain-scissor", label: "Rough Terrain Scissor" },
-                { href: "/#fleet-electric-scissor", label: "Electric Scissor Lifts" },
-                { href: "/#fleet-recovery-service", label: "Recovery & Transport" },
-              ].map((item) => (
-                <li key={item.href}>
-                  {"page" in item && item.page ? (
-                    <Link href={item.href} className="text-gray-300 hover:text-brand-200 transition-colors">
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <a href={item.href} className="text-gray-300 hover:text-brand-200 transition-colors">
-                      {item.label}
-                    </a>
-                  )}
+              {SERVICE_PAGES.map((item) => (
+                <li key={item.path}>
+                  <Link href={item.path} className="text-gray-300 hover:text-brand-200 transition-colors">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-display font-bold text-white mb-4">Guides</h3>
+            <ul className="space-y-2 text-sm">
+              {GUIDE_PAGES.map((item) => (
+                <li key={item.path}>
+                  <Link href={item.path} className="text-gray-300 hover:text-brand-200 transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a href="#fleet-boom-lift" className="text-gray-300 hover:text-brand-200 transition-colors">
+                  View Fleet Gallery
+                </a>
+              </li>
             </ul>
           </div>
 

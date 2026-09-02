@@ -66,9 +66,14 @@ export function Services() {
 
                 <Button variant="ghost" size="sm" asChild className="text-brand-700 hover:text-brand-700 hover:bg-brand-50 px-0">
                   {service.id === "boom-lift" ? (
-                    <Link href="/manlift-rental-dubai" aria-label="Manlift rental Dubai">
+                    <Link href="/boom-lift-rental-dubai" aria-label="Boom lift rental Dubai">
                       <ArrowUpRight className="h-4 w-4" />
-                      Manlift rental Dubai
+                      Boom lift rental Dubai
+                    </Link>
+                  ) : service.id === "electric-scissor" ? (
+                    <Link href="/scissor-lift-rental-dubai" aria-label="Scissor lift rental Dubai">
+                      <ArrowUpRight className="h-4 w-4" />
+                      Scissor lift rental Dubai
                     </Link>
                   ) : (
                     <a href={`#fleet-${service.id}`} aria-label={`View ${service.title} in fleet`}>

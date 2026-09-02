@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import { SITE_CONFIG } from "@/lib/constants";
+import { HOMEPAGE_FAQS } from "@/lib/pages/types";
 import {
   generateLocalBusinessJsonLd,
   generateOrganizationJsonLd,
@@ -117,7 +118,7 @@ export default function RootLayout({
     generateLocalBusinessJsonLd(),
     generateOrganizationJsonLd(),
     generateWebSiteJsonLd(),
-    generateFAQJsonLd(),
+    generateFAQJsonLd(HOMEPAGE_FAQS),
   ];
 
   return (

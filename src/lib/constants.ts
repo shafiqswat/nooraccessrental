@@ -8,7 +8,7 @@ const canonicalUrl = getCanonicalUrl();
 export const SITE_CONFIG = {
   name: "Noor Access Rental",
   title:
-    "Manlift Rental UAE | Boom Lift & Scissor Lift Dubai | Noor Access Rental",
+    "Manlift Rental UAE | Boom & Scissor Lift Dubai | Noor Access",
   description:
     "Manlift, boom lift and scissor lift rental in Dubai, Sharjah, Abu Dhabi and across UAE. Aerial equipment and access platform rental with 24/7 WhatsApp support. Call 00971 525156677.",
   url: siteUrl,
