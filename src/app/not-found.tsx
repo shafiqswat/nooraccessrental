@@ -16,7 +16,7 @@ export default function NotFound() {
           className="mx-auto h-20 w-20 rounded-2xl object-contain"
         />
         <div className="space-y-2">
-          <h1 className="font-display text-7xl font-bold text-brand-600">404</h1>
+          <h1 className="font-display text-7xl font-bold text-brand-700">404</h1>
           <h2 className="font-display text-2xl font-bold text-gray-900">
             Page Not Found
           </h2>

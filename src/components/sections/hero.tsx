@@ -28,13 +28,13 @@ export function Hero() {
                 Top Rated Equipment Rental in UAE
               </Badge>
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-[1.1] tracking-tight">
-                Premium{" "}
-                <span className="text-brand-600">Manlift</span> &{" "}
-                <span className="text-brand-600">Aerial</span> Equipment Rental
+                <span className="text-brand-700">Manlift Rental UAE</span> — Premium{" "}
+                <span className="text-brand-700">Boom Lift</span> &{" "}
+                <span className="text-brand-700">Scissor Lift</span> Hire
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Discounted rental rates on boom lifts, scissor lifts, and aerial
-                platforms across Dubai, Sharjah, and UAE. On-time delivery with
+                Discounted boom lift, scissor lift and aerial equipment rental in
+                Dubai, Sharjah, Abu Dhabi and across UAE. On-time delivery with
                 principles.
               </p>
             </div>
@@ -69,7 +69,7 @@ export function Hero() {
                 { icon: Star, text: "5.0 Rated Service" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 text-sm text-gray-600">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100 text-brand-600">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
                     <item.icon className="h-4 w-4" />
                   </div>
                   <span className="font-medium">{item.text}</span>

@@ -22,7 +22,7 @@ export function Footer() {
               />
               <div>
                 <p className="font-display font-bold text-white text-lg">
-                  NOOR <span className="text-brand-400">ACCESS</span>
+                  NOOR <span className="text-brand-300">ACCESS</span>
                 </p>
                 <p className="text-xs text-gray-400 tracking-widest">RENTAL</p>
               </div>
@@ -44,7 +44,7 @@ export function Footer() {
                 { href: "#fleet-recovery-service", label: "Recovery & Transport" },
               ].map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="hover:text-brand-400 transition-colors">
+                  <a href={item.href} className="hover:text-brand-300 transition-colors">
                     {item.label}
                   </a>
                 </li>
@@ -72,12 +72,12 @@ export function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer me"
-                      className="hover:text-brand-400 transition-colors"
+                      className="hover:text-brand-300 transition-colors"
                     >
                       {link.label}
                     </a>
                   ) : (
-                    <a href={link.href} className="hover:text-brand-400 transition-colors">
+                    <a href={link.href} className="hover:text-brand-300 transition-colors">
                       {link.label}
                     </a>
                   )}
@@ -90,30 +90,30 @@ export function Footer() {
             <h3 className="font-display font-bold text-white mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-brand-400 shrink-0" />
+                <Phone className="h-4 w-4 text-brand-300 shrink-0" />
                 <a
                   href={`tel:${SITE_CONFIG.phone}`}
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-300 transition-colors"
                 >
                   {SITE_CONFIG.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-brand-400 shrink-0" />
+                <Mail className="h-4 w-4 text-brand-300 shrink-0" />
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-300 transition-colors"
                 >
                   {SITE_CONFIG.email}
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-brand-400 shrink-0 mt-0.5" />
+                <MapPin className="h-4 w-4 text-brand-300 shrink-0 mt-0.5" />
                 <a
                   href="https://maps.google.com/?q=Sharjah,+United+Arab+Emirates"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-brand-400 transition-colors"
+                  className="hover:text-brand-300 transition-colors"
                 >
                   {SITE_CONFIG.location.address}
                 </a>
@@ -125,7 +125,7 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>
             &copy; {currentYear}{" "}
-            <Link href="/" className="hover:text-brand-400 transition-colors">
+            <Link href="/" className="hover:text-brand-300 transition-colors">
               {SITE_CONFIG.name}
             </Link>
             . All rights reserved.

@@ -17,7 +17,7 @@ export function Gallery() {
             Our Fleet
           </Badge>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
-            Premium <span className="text-brand-600">Equipment</span> Ready to Deploy
+            Premium <span className="text-brand-700">Equipment</span> Ready to Deploy
           </h2>
           <p className="text-lg text-gray-600">
             Boom lifts, scissor lifts, and recovery services at discounted rental rates across UAE.
@@ -70,7 +70,7 @@ function FleetCard({ item }: { item: FleetItem }) {
 
       <div className="p-6 lg:p-8 space-y-4 border-t border-gray-100">
         <div>
-          <p className="text-xs font-bold text-brand-600 uppercase tracking-widest">
+          <p className="text-xs font-bold text-brand-700 uppercase tracking-widest">
             {item.type}
           </p>
           <h3 className="font-display text-xl lg:text-2xl font-bold text-gray-900 mt-1">
@@ -92,6 +92,7 @@ function FleetCard({ item }: { item: FleetItem }) {
             href={`https://wa.me/${SITE_CONFIG.whatsapp}?text=${whatsappText}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Inquire about ${item.title} on WhatsApp`}
           >
             <MessageCircle className="h-4 w-4" />
             Inquire on WhatsApp

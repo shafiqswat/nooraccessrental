@@ -32,7 +32,7 @@ export function WhyUs() {
               <Badge variant="outline">Why Choose Us</Badge>
               <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
                 Your Trusted Partner for{" "}
-                <span className="text-brand-600">Equipment Rental</span> in UAE
+                <span className="text-brand-700">Equipment Rental</span> in UAE
               </h2>
               <p className="text-gray-600 text-lg leading-relaxed">
                 Noor Access Rental has its own niche — completing every job on
@@ -45,7 +45,7 @@ export function WhyUs() {
               {benefits.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-100 mt-0.5">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-brand-600" />
+                    <CheckCircle2 className="h-3.5 w-3.5 text-brand-700" />
                   </div>
                   <span className="text-gray-700">{item}</span>
                 </li>
@@ -75,7 +75,7 @@ export function WhyUs() {
                   key={stat.label}
                   className="rounded-2xl bg-gray-50 border border-gray-100 p-5 hover:border-brand-200 hover:bg-brand-50/40 transition-colors"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-600 mb-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-100 text-brand-700 mb-3">
                     <stat.icon className="h-5 w-5" />
                   </div>
                   <p className="font-display text-2xl font-bold text-gray-900">{stat.value}</p>

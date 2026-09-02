@@ -21,7 +21,7 @@ export function CeoSection() {
               </Badge>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Built on Trust,{" "}
-                <span className="text-brand-600">Principles</span> & Excellence
+                <span className="text-brand-700">Principles</span> & Excellence
               </h2>
             </div>
 
@@ -38,7 +38,7 @@ export function CeoSection() {
                 <p className="font-display text-xl font-bold text-gray-900">
                   {SITE_CONFIG.ceo}
                 </p>
-                <p className="text-brand-600 font-semibold">CEO, Noor Access Rental</p>
+                <p className="text-brand-700 font-semibold">CEO, Noor Access Rental</p>
               </div>
             </div>
 
@@ -52,7 +52,7 @@ export function CeoSection() {
                   key={stat.label}
                   className="text-center p-4 rounded-2xl bg-gradient-to-br from-brand-50 to-white border border-brand-100"
                 >
-                  <p className="font-display text-2xl sm:text-3xl font-bold text-brand-600">
+                  <p className="font-display text-2xl sm:text-3xl font-bold text-brand-700">
                     {stat.value}
                   </p>
                   <p className="text-xs sm:text-sm text-gray-500 mt-1">{stat.label}</p>
@@ -100,7 +100,7 @@ export function CeoSection() {
                   <p className="font-display font-bold text-gray-900 text-center">
                     {SITE_CONFIG.ceo}
                   </p>
-                  <p className="text-brand-600 text-sm font-semibold text-center">
+                  <p className="text-brand-700 text-sm font-semibold text-center">
                     Chief Executive Officer
                   </p>
                 </div>

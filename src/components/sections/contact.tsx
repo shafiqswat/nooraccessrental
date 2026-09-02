@@ -65,7 +65,7 @@ export function Contact() {
                 </Badge>
                 <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                   Ready to Rent?{" "}
-                  <span className="text-brand-600">Contact Us Now</span>
+                  <span className="text-brand-700">Contact Us Now</span>
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Get discounted rates on manlift and aerial equipment rental.
@@ -103,11 +103,11 @@ export function Contact() {
                     rel={item.external ? "noopener noreferrer me" : undefined}
                     className="group flex flex-col gap-3 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:border-brand-200 hover:bg-brand-50/50 hover:shadow-md hover:shadow-brand-600/5 transition-all duration-300"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100 text-brand-700 group-hover:bg-brand-600 group-hover:text-white transition-colors">
                       <item.icon className="h-5 w-5" />
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-brand-600 uppercase tracking-wider">
+                      <span className="text-xs font-bold text-brand-700 uppercase tracking-wider">
                         {item.label}
                       </span>
                       <p className="font-semibold text-gray-900 text-sm mt-1 leading-snug">
@@ -121,7 +121,7 @@ export function Contact() {
 
               <div className="mt-10 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div className="flex items-center gap-3 text-gray-600">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-brand-700">
                     <Clock className="h-5 w-5" />
                   </div>
                   <div>

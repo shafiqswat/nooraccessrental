@@ -57,7 +57,7 @@ export function Header() {
             />
             <div className="hidden sm:block">
               <span className="font-display text-lg font-bold text-gray-900 leading-tight">
-                NOOR <span className="text-brand-600">ACCESS</span>
+                NOOR <span className="text-brand-700">ACCESS</span>
               </span>
               <span className="block text-xs font-medium text-gray-500 tracking-widest">
                 RENTAL
@@ -70,7 +70,7 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors rounded-lg hover:bg-brand-50"
+                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-brand-700 transition-colors rounded-lg hover:bg-brand-50"
               >
                 {link.label}
               </a>
@@ -80,7 +80,7 @@ export function Header() {
           <div className="flex items-center gap-3">
             <a
               href={`tel:${SITE_CONFIG.phone}`}
-              className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-brand-600 transition-colors"
+              className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-brand-700 transition-colors"
             >
               <Phone className="h-4 w-4" />
               {SITE_CONFIG.phoneDisplay}
@@ -112,7 +112,7 @@ export function Header() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-3 text-sm font-medium text-gray-700 hover:text-brand-600 hover:bg-brand-50 rounded-lg transition-colors"
+                  className="px-4 py-3 text-sm font-medium text-gray-700 hover:text-brand-700 hover:bg-brand-50 rounded-lg transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}

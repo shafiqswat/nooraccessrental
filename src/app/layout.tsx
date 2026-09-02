@@ -5,6 +5,7 @@ import {
   generateLocalBusinessJsonLd,
   generateOrganizationJsonLd,
   generateWebSiteJsonLd,
+  generateFAQJsonLd,
 } from "@/lib/seo";
 import "./globals.css";
 
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     telephone: true,
   },
   alternates: {
-    canonical: SITE_CONFIG.url,
+    canonical: SITE_CONFIG.canonicalUrl,
   },
   openGraph: {
     type: "website",
@@ -85,11 +86,14 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    // Add your Google Search Console verification code after deployment
-    // google: "your-verification-code",
-  },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
   category: "business",
+  icons: {
+    icon: "/images/logo.jpeg",
+    apple: "/images/logo.jpeg",
+  },
   other: {
     "geo.region": "AE",
     "geo.placename": "Sharjah",
@@ -107,12 +111,14 @@ export default function RootLayout({
     generateLocalBusinessJsonLd(),
     generateOrganizationJsonLd(),
     generateWebSiteJsonLd(),
+    generateFAQJsonLd(),
   ];
 
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <head>
         <link rel="icon" href="/images/logo.jpeg" type="image/jpeg" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <link rel="apple-touch-icon" href="/images/logo.jpeg" />
         {jsonLdScripts.map((data, i) => (
           <script

@@ -29,7 +29,7 @@ export function Services() {
           </Badge>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
             Complete Aerial Equipment{" "}
-            <span className="text-brand-600">Rental Solutions</span>
+            <span className="text-brand-700">Rental Solutions</span>
           </h2>
           <p className="text-lg text-gray-600">
             From 5-metre scissor lifts to 40-metre boom lifts across UAE.
@@ -46,7 +46,7 @@ export function Services() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-500 to-gold scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
               <CardContent className="p-6 lg:p-8 space-y-5">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors shrink-0">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-700 group-hover:bg-brand-600 group-hover:text-white transition-colors shrink-0">
                     {iconMap[service.icon]}
                   </div>
                   <Badge variant="outline" className="shrink-0 font-bold text-brand-700">
@@ -63,8 +63,8 @@ export function Services() {
                   </p>
                 </div>
 
-                <Button variant="ghost" size="sm" asChild className="text-brand-600 hover:text-brand-700 hover:bg-brand-50 px-0">
-                  <a href={`#fleet-${service.id}`}>
+                <Button variant="ghost" size="sm" asChild className="text-brand-700 hover:text-brand-700 hover:bg-brand-50 px-0">
+                  <a href={`#fleet-${service.id}`} aria-label={`View ${service.title} in fleet`}>
                     <ArrowUpRight className="h-4 w-4" />
                     View equipment in fleet
                   </a>
